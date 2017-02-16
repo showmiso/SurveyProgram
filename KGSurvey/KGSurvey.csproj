@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C9DA9AD-308F-4C44-81B4-70400D4CD0C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KGSurvey</RootNamespace>
+    <AssemblyName>KGSurvey</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="accoremgd">
+      <HintPath>C:\Program Files\Autodesk\AutoCAD 2016\accoremgd.dll</HintPath>
+    </Reference>
+    <Reference Include="acdbmgd">
+      <HintPath>..\..\..\..\Git Repository\KG_ROAD\KG_ROAD\KG_ROAD\bin\Debug\acdbmgd.dll</HintPath>
+    </Reference>
+    <Reference Include="acmgd">
+      <HintPath>..\..\..\..\Git Repository\KG_ROAD\KG_ROAD\KG_ROAD\bin\Debug\acmgd.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Poly2Tri, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Poly2Tri.dll</HintPath>
+    </Reference>
+    <Reference Include="SourceGrid, Version=4.40.4580.29320, Culture=neutral, PublicKeyToken=df6f5e538749e85d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SourceGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="KGSurvey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KGSurvey.Designer.cs">
+      <DependentUpon>KGSurvey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KGSurvey_Contour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KGSurvey_Contour.Designer.cs">
+      <DependentUpon>KGSurvey_Contour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KGSurvey_DataList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KGSurvey_DataList.Designer.cs">
+      <DependentUpon>KGSurvey_DataList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KGSurvey_LayerManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KGSurvey_LayerManage.Designer.cs">
+      <DependentUpon>KGSurvey_LayerManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KGSurvey_LineInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KGSurvey_LineInfo.Designer.cs">
+      <DependentUpon>KGSurvey_LineInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KGSurvey_Mark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KGSurvey_Mark.Designer.cs">
+      <DependentUpon>KGSurvey_Mark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KGSurvey_PointInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KGSurvey_PointInfo.Designer.cs">
+      <DependentUpon>KGSurvey_PointInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Process\Contour.cs" />
+    <Compile Include="Process\ConvexHull.cs" />
+    <Compile Include="Process\TriangulationProcess.cs" />
+    <Compile Include="MainProgram.cs" />
+    <Compile Include="Process\Triangulation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ClassUtil.cs" />
+    <Compile Include="Utils\ExportUtil.cs" />
+    <Compile Include="Utils\LayerUtil.cs" />
+    <Compile Include="Utils\SectionGridUtil.cs" />
+    <Compile Include="Utils\SelectUtil.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="Utils\ZoomUtil.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="KGSurvey.resx">
+      <DependentUpon>KGSurvey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KGSurvey_Contour.resx">
+      <DependentUpon>KGSurvey_Contour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KGSurvey_DataList.resx">
+      <DependentUpon>KGSurvey_DataList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KGSurvey_LayerManage.resx">
+      <DependentUpon>KGSurvey_LayerManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KGSurvey_LineInfo.resx">
+      <DependentUpon>KGSurvey_LineInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KGSurvey_Mark.resx">
+      <DependentUpon>KGSurvey_Mark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KGSurvey_PointInfo.resx">
+      <DependentUpon>KGSurvey_PointInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\1.측점파일 열기.png" />
+    <Content Include="Resources\10.등고선.png" />
+    <Content Include="Resources\11.등고선 삭제.png" />
+    <Content Include="Resources\2.같은코드연결.png" />
+    <Content Include="Resources\3.연속코드연결.png" />
+    <Content Include="Resources\4.연속코드삭제.png" />
+    <Content Include="Resources\5.정보보기.png" />
+    <Content Include="Resources\6.리스트.png" />
+    <Content Include="Resources\7.측점표기.png" />
+    <Content Include="Resources\8.삼각망생성.png" />
+    <Content Include="Resources\9.삼각망삭제.png" />
+    <Content Include="Resources\KG16X16.ico" />
+    <Content Include="Resources\z값 추출.png" />
+    <Content Include="Resources\레이어.png" />
+    <Content Include="Resources\방위 점추가.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
